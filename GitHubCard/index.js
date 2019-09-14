@@ -24,7 +24,7 @@
           user, and adding that card to the DOM.
 */
 
-const followersArray = []
+const gitHubs = ['AlexC007','tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell'];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -97,7 +97,8 @@ return card;
 }
 const cardTest = document.querySelector(".cards");
 
-axios.get('https://api.github.com/users/AlexC007')
+for (let i =0; i<= gitHubs.length; i++){
+axios.get('https://api.github.com/users/' + gitHubs[i])
   .then(function (response) {
     // handle success
     console.log(response.data);
@@ -112,7 +113,7 @@ axios.get('https://api.github.com/users/AlexC007')
   .finally(function () {
     // always executed
   });
-
+}
 
 
 /* List of LS Instructors Github username's:
